@@ -1,12 +1,14 @@
 exports.SessionWindow = function(navController,kpClient) {
 	
 	var isAndroid = (Ti.Platform.osname=='android') ? true : false;
-	var scanner = require('ScanWindow').ScanWindow;
+	var ScanWindow = require('ScanWindow').ScanWindow;
 
 	var win = Ti.UI.createWindow({
 		title:'Window '+navController.windowStack.length,
 		backgroundColor:'#fff',
-		layout:'vertical'
+		layout:'vertical',
+		exitOnClose: true,
+		navBarHidden: false
 	});
 	
 	var headerLbl = Titanium.UI.createLabel({
@@ -64,7 +66,30 @@ exports.SessionWindow = function(navController,kpClient) {
 	
 	win.readyEventScan = function(event_title){
 		alert('ta da!');
+		navController.open(new ScanWindow(navController,kpClient,event_title));
 	}
+	
+	// handle physical back button press
+	// set up confirmation dialog
+	var a = Ti.UI.createAlertDialog();
+	 
+	a.message = 'Exit karmapoints app?';
+	a.buttonNames = ['Yes','No'];
+	a.cancel = 1;
+	 
+	a.addEventListener('click', function(e)
+	{
+	    if (e.index == 0) {
+	    	win.close();
+	    }
+	});
+	 
+	win.add(a);
+	
+	win.addEventListener('android:back',function(e) {
+	    a.show();
+	    return false;
+	});
 	
 	win.add(headerLbl);
 	win.add(usernameFld);

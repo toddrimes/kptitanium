@@ -1,34 +1,53 @@
-exports.SessionWindow = function(navController,kpClient) {
+exports.ScanWindow = function(navController,kpClient,event_title) {
 	
 	var isAndroid = (Ti.Platform.osname=='android') ? true : false;
 
 	var win = Ti.UI.createWindow({
-		title:'Window '+navController.windowStack.length,
+		title:'Scan'+navController.windowStack.length,
 		backgroundColor:'#fff',
 		layout:'vertical'
 	});
+	
+	var headerLbl = Titanium.UI.createLabel({
+	    text:event_title,
+	    height:'auto',
+	    width:'auto',
+	    shadowColor:'#aaa',
+	    shadowOffset:{x:5,y:5},
+	    color:'#900',
+	    font:{fontSize:16},
+	    textAlign:'center',
+	    top:'10dp'
+	});
+	
+	win.add(headerLbl);
 
-	var add = Ti.UI.createButton({
-		title:'Add A New Window',
+	var scanBtn = Ti.UI.createButton({
+		title:'Scan',
 		height:'50dp',
 		width:'200dp',
 		top:'20dp'
 	});
-	add.addEventListener('click', function() {
-		navController.open(new exports.SessionWindow(navController));
+	
+	scanBtn.addEventListener('click', function() {
+		alert('If I knew how, I\'d be scanning right now.');
 	});
-	win.add(add);
+	
+	win.add(scanBtn);
+	
+	var webview = Titanium.UI.createWebView({
+		url:'http://www.karmapoints.org/nothingscanned.html',
+		height:'150dp',
+		width:'300dp',
+		bottom:'10dp'
+	});
 
-	var home = Ti.UI.createButton({
-		title:'Go to the Home Window',
-		height:'50dp',
-		width:'200dp',
-		top:'20dp'
+    win.add(webview);
+    
+	win.addEventListener('android:back',function(e) {
+	    navController.home(); // go back to the login screen
+	    return false;
 	});
-	home.addEventListener('click', function() {
-		navController.home();
-	});
-	win.add(home);
 
 	return win;
 };
