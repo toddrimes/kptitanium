@@ -37,6 +37,17 @@
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
-    <modules/>
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+      <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:anyDensity="true"
+        />
+    </manifest>
+  </android>
+  <modules>
+    <module version="0.2">com.mwaysolutions.barcode</module>
+  </modules>
 </ti:app>

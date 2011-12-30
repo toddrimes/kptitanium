@@ -65,7 +65,6 @@ exports.SessionWindow = function(navController,kpClient) {
 	});
 	
 	win.readyEventScan = function(event_title){
-		alert('ta da!');
 		navController.open(new ScanWindow(navController,kpClient,event_title));
 	}
 	
@@ -80,7 +79,8 @@ exports.SessionWindow = function(navController,kpClient) {
 	a.addEventListener('click', function(e)
 	{
 	    if (e.index == 0) {
-	    	win.close();
+			kpClient.fetchLogout();
+			win.close();
 	    }
 	});
 	 

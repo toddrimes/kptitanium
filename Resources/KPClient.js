@@ -136,12 +136,12 @@ exports.KPClient = function() {
 		params = null;
 	}
 	
-	xhr.fetchLogout = function(volunteer_id) {
+	xhr.fetchLogout = function() {
 		var params = {
 			'sessid':xhr.sessid
 		}
 		xhr.setOnload(function() {
-			return xhr.responseText;
+			return true;
 		});
 		xhr.open("GET",logoutURL);
 	}
