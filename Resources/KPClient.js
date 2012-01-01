@@ -100,24 +100,7 @@ exports.KPClient = function() {
 		xhr.onload = function() {
 			// parse the response
 			json = JSON.parse(xhr.responseText);
-
-			var picker = Titanium.UI.createPicker({useSpinner:true});
-			// picker.add(xhr.pickerDataTitles);
-			var data = [];
-			for(var index in json){
-				item = json[index];
-				xhr.pickerDataIds.push(item.nid);
-				xhr.pickerDataTitles.push(item.node_title);
-				data[index]=Titanium.UI.createPickerRow({title:item.node_title})
-			}
-			picker.add(data);
-			picker.addEventListener('change', function(e) {
-				// use the entered credentials to attempt login
-				xhr.readyCoordinator(xhr.pickerDataIds[e.rowIndex]);
-				// xhr.caller['readyEventScan'](xhr.pickerDataTitles[e.rowIndex]);
-				xhr.caller['readyEventScan']("Go for it!");
-			});
-			xhr.caller['add'](picker);
+			xhr.caller['addPicker'](json);
 		};
 		var params = {
 			'sessid':xhr.sessid

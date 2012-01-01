@@ -1,16 +1,15 @@
 Logfile initialized
 [INFO] logfile = /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build.log
-[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.5/android/builder.py simulator NavigationControllerDemo /Users/todd/Documents/android-sdk-mac_x86 /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium com.appcelerator.navcontroller 4 WVGA854 /192.168.0.134:64234
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.5/android/builder.py simulator NavigationControllerDemo /Users/todd/Documents/android-sdk-mac_x86 /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium com.appcelerator.navcontroller 4 WVGA854 
 [INFO] Building NavigationControllerDemo for Android ... one moment
 [INFO] Titanium SDK version: 1.7.5 (11/02/11 17:00 ab20af7)
 [DEBUG] Waiting for device to be ready ...
-[TRACE] adb devices returned 0 devices/emulators
 [TRACE] adb devices returned 1 devices/emulators
 [TRACE] adb devices returned 1 devices/emulators
 [TRACE] adb devices returned 1 devices/emulators
 [TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 20 seconds)
-[DEBUG] waited 20.077333 seconds on emulator to get ready
+[DEBUG] Device connected... (waited 15 seconds)
+[DEBUG] waited 15.236987 seconds on emulator to get ready
 [INFO] Waiting for the Android Emulator to become available
 [DEBUG] com.appcelerator.navcontroller installed? True
 [INFO] Copying project resources..
@@ -106,10 +105,9 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.012246 seconds on emulator to get ready
+[DEBUG] waited 0.012316 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Launching application ... NavigationControllerDemo
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.appcelerator.navcontroller/.NavigationcontrollerdemoActivity }
 
 [INFO] Deployed NavigationControllerDemo ... Application should be running.
-[INFO] Android Emulator has exited

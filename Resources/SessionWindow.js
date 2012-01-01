@@ -2,9 +2,10 @@ exports.SessionWindow = function(navController,kpClient) {
 	
 	var isAndroid = (Ti.Platform.osname=='android') ? true : false;
 	var ScanWindow = require('ScanWindow').ScanWindow;
+	var rowData = [];
 
 	var win = Ti.UI.createWindow({
-		title:'Window '+navController.windowStack.length,
+		title:'karmapoints&copy;',
 		backgroundColor:'#fff',
 		layout:'vertical',
 		exitOnClose: true,
@@ -64,8 +65,30 @@ exports.SessionWindow = function(navController,kpClient) {
 		kpClient.postLogin(usernameFld.value, passwordFld.value,win);
 	});
 	
-	win.readyEventScan = function(event_title){
+	readyEventScan = function(event_title){
 		navController.open(new ScanWindow(navController,kpClient,event_title));
+	}
+	
+	var rowTitles = [];
+	var rowIds = [];
+	
+	win.addPicker = function(rowData){
+		var picker = Titanium.UI.createPicker({useSpinner:true});
+		data = [];
+		for (var i in rowData) {
+			title = rowData[i].node_title;
+			rowTitles[i] = title;
+			rowIds[i] = rowData[i].nid;
+			data[i]=Titanium.UI.createPickerRow({title:title})
+		}
+		picker.add(data);
+		picker.addEventListener('change', function(e) {
+			title = rowTitles[e.rowIndex];
+			// use the entered credentials to attempt login
+			kpClient.readyCoordinator(rowIds[e.rowIndex]);
+			readyEventScan(title);
+		});
+		win.add(picker);
 	}
 	
 	// handle physical back button press
