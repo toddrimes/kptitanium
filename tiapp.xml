@@ -10,14 +10,14 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <id>com.appcelerator.navcontroller</id>
-    <name>NavigationControllerDemo</name>
+    <id>org.karmapoints.kptitanium</id>
+    <name>Karmapoints Scanner</name>
     <version>1.0</version>
-    <publisher>kevin</publisher>
-    <url>http://appcelerator.com</url>
-    <description>not specified</description>
-    <copyright>2011 by kevin</copyright>
-    <icon>appicon.png</icon>
+    <publisher>Todd Rimes</publisher>
+    <url>http://www.karmapoints.org</url>
+    <description>This app allows karmapoints-registered coordinators to check-in volunteers at events.</description>
+    <copyright>2011 by Todd Rimes for karmapoints</copyright>
+    <icon>appIcon57x57.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>

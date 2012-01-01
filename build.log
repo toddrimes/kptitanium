@@ -1,26 +1,27 @@
 Logfile initialized
 [INFO] logfile = /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build.log
-[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.5/android/builder.py simulator NavigationControllerDemo /Users/todd/Documents/android-sdk-mac_x86 /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium com.appcelerator.navcontroller 4 WVGA854 
-[INFO] Building NavigationControllerDemo for Android ... one moment
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.5/android/builder.py simulator Karmapoints Scanner /Users/todd/Documents/android-sdk-mac_x86 /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium org.karmapoints.kptitanium 4 WVGA854 
+[INFO] Building Karmapoints Scanner for Android ... one moment
 [INFO] Titanium SDK version: 1.7.5 (11/02/11 17:00 ab20af7)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.014637 seconds on emulator to get ready
-[DEBUG] com.appcelerator.navcontroller installed? True
+[DEBUG] waited 0.012198 seconds on emulator to get ready
+[DEBUG] org.karmapoints.kptitanium installed? True
 [INFO] Copying project resources..
 [INFO] Detected tiapp.xml change (or assets deleted), forcing full re-build...
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/android/appicon.png => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/appicon.png
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/android/default.png => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/default.png
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/app.js => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/app.js
+[TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/appIcon57x57.png => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/appIcon57x57.png
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/KPClient.js => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/KPClient.js
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/NavigationController.js => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/NavigationController.js
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/ScanWindow.js => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/ScanWindow.js
 [TRACE] COPYING CREATED FILE: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/SessionWindow.js => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/SessionWindow.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
-[DEBUG] app stylesheet => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/ApplicationStylesheet.java
-[DEBUG] copying app icon: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/appicon.png
+[DEBUG] app stylesheet => /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/ApplicationStylesheet.java
+[DEBUG] copying app icon: /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/appIcon57x57.png
 [DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/android/images/res-long-land-hdpi/default.png
 [DEBUG] copying /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/android/images/res-long-land-hdpi/default.png splash screen to /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/res/drawable-long-land-hdpi/background.png
@@ -44,12 +45,12 @@ Logfile initialized
 [DEBUG] copying /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/Resources/android/images/res-notlong-port-mdpi/default.png splash screen to /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/res/drawable-notlong-port-mdpi/background.png
 [DEBUG] found splash screen at /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/bin/assets/Resources/default.png
 [TRACE] Writing out AndroidManifest.xml
-[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/ApplicationStylesheet.java to javac build list
-[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/NavigationcontrollerdemoActivity.java to javac build list
-[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/NavigationcontrollerdemoAppInfo.java to javac build list
-[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/NavigationcontrollerdemoApplication.java to javac build list
-[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/R.java to javac build list
-[DEBUG] Building Java Sources: "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/ApplicationStylesheet.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/NavigationcontrollerdemoActivity.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/NavigationcontrollerdemoAppInfo.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/NavigationcontrollerdemoApplication.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/com/appcelerator/navcontroller/R.java"
+[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/ApplicationStylesheet.java to javac build list
+[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/KarmapointsScannerActivity.java to javac build list
+[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/KarmapointsScannerAppInfo.java to javac build list
+[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/KarmapointsScannerApplication.java to javac build list
+[DEBUG] adding /Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/R.java to javac build list
+[DEBUG] Building Java Sources: "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/ApplicationStylesheet.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/KarmapointsScannerActivity.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/KarmapointsScannerAppInfo.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/KarmapointsScannerApplication.java" "/Users/todd/Documents/Titanium Studio Workspace/Forging-Titanium/kptitanium/build/android/gen/org/karmapoints/kptitanium/R.java"
 [INFO] Waiting for SDCard to become available..
 [INFO] Compiling Android Resources... This could take some time
 [DEBUG] Android classes.dex built
@@ -59,6 +60,7 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/ScanWindow.js
 [DEBUG] from resource zip => assets/Resources/SessionWindow.js
 [DEBUG] from resource zip => assets/Resources/app.js
+[DEBUG] from resource zip => assets/Resources/appIcon57x57.png
 [DEBUG] from resource zip => assets/Resources/appicon.png
 [DEBUG] from resource zip => assets/Resources/default.png
 [DEBUG] from resource zip => assets/tiapp.xml
@@ -101,9 +103,9 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.012002 seconds on emulator to get ready
+[DEBUG] waited 0.011558 seconds on emulator to get ready
 [INFO] Installing application on device
-[INFO] Launching application ... NavigationControllerDemo
-[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.appcelerator.navcontroller/.NavigationcontrollerdemoActivity }
+[INFO] Launching application ... Karmapoints Scanner
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=org.karmapoints.kptitanium/.KarmapointsScannerActivity }
 
-[INFO] Deployed NavigationControllerDemo ... Application should be running.
+[INFO] Deployed Karmapoints Scanner ... Application should be running.
