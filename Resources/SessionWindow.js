@@ -6,7 +6,8 @@ exports.SessionWindow = function(navController,kpClient) {
 
 	var win = Ti.UI.createWindow({
 		title:'karmapoints',
-		backgroundColor:'#fff',
+		color:'#0cc',
+		backgroundColor:'#cc9',
 		layout:'vertical',
 		exitOnClose: true,
 		navBarHidden: false
@@ -16,9 +17,9 @@ exports.SessionWindow = function(navController,kpClient) {
 	    text:'Login is a Coordinator',
 	    height:'auto',
 	    width:'auto',
-	    shadowColor:'#aaa',
+	    shadowColor:'#000',
 	    shadowOffset:{x:5,y:5},
-	    color:'#900',
+	    color:'#fff',
 	    font:{fontSize:16},
 	    textAlign:'center',
 	    top:'10dp'

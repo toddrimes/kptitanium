@@ -11,7 +11,7 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <id>org.karmapoints.kptitanium</id>
-    <name>Karmapoints Scanner</name>
+    <name>karma points</name>
     <version>1.0</version>
     <publisher>Todd Rimes</publisher>
     <url>http://www.karmapoints.org</url>

@@ -5,7 +5,8 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 
 	var win = Ti.UI.createWindow({
 		title:'Scanning badges for: ',
-		backgroundColor:'#fff',
+		color:'#0cc',
+		backgroundColor:'#cc9',
 		layout:'vertical',
 		navBarHidden: false
 	});
@@ -14,9 +15,9 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	    text:event_title,
 	    height:'auto',
 	    width:'auto',
-	    shadowColor:'#aaa',
+	    shadowColor:'#ccc',
 	    shadowOffset:{x:5,y:5},
-	    color:'#900',
+	    color:'#fff',
 	    font:{fontSize:16},
 	    textAlign:'center',
 	    top:'10dp'
