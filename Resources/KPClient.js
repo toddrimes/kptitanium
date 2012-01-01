@@ -33,11 +33,11 @@ exports.KPClient = function() {
 	}
 	
 	xhr.fetchSession = function(user,pass) {
-		xhr.setOnload(function() {
+	 xhr.onload = function() {
 			// parse the response
 			json = JSON.parse(xhr.responseText);
 			xhr.sessid = json.sessid;
-		});
+		};
 		var params = {  
 		    'user':user,  
 		    'pass':pass
@@ -49,7 +49,7 @@ exports.KPClient = function() {
 	
 	xhr.postLogin = function(username,password,caller) {
 		xhr.caller = caller;
-		xhr.setOnload(function() {
+		xhr.onload = function() {
 			// parse the response
 			xhr.cookie = xhr.getResponseHeader("Set-Cookie");
 			json = JSON.parse(xhr.responseText);
@@ -71,7 +71,7 @@ exports.KPClient = function() {
 				});
 				alertDialog.show();
 			}
-		});
+		};
 		var params = {  
 		    'sessid':xhr.sessid,  
 		    'username':username,  
@@ -84,9 +84,9 @@ exports.KPClient = function() {
 	}
 	
 	xhr.readyCoordinator = function(event_id) {
-		xhr.setOnload(function() {
+		xhr.onload = function() {
 			return true;
-		});
+		};
 		var params = {
 			'sessid':xhr.sessid,
 		    'event_id':event_id
@@ -97,23 +97,28 @@ exports.KPClient = function() {
 	}
 	
 	xhr.fetchEvents = function() {
-		xhr.setOnload(function() {
+		xhr.onload = function() {
 			// parse the response
 			json = JSON.parse(xhr.responseText);
+
+			var picker = Titanium.UI.createPicker({useSpinner:true});
+			// picker.add(xhr.pickerDataTitles);
+			var data = [];
 			for(var index in json){
 				item = json[index];
 				xhr.pickerDataIds.push(item.nid);
-				xhr.pickerDataTitles.push(Titanium.UI.createPickerRow({title:item.node_title}));
+				xhr.pickerDataTitles.push(item.node_title);
+				data[index]=Titanium.UI.createPickerRow({title:item.node_title})
 			}
-			var picker = Titanium.UI.createPicker({useSpinner:true});
-			picker.add(xhr.pickerDataTitles);
+			picker.add(data);
 			picker.addEventListener('change', function(e) {
 				// use the entered credentials to attempt login
 				xhr.readyCoordinator(xhr.pickerDataIds[e.rowIndex]);
-				xhr.caller['readyEventScan'](xhr.pickerDataTitles[e.rowIndex]);
+				// xhr.caller['readyEventScan'](xhr.pickerDataTitles[e.rowIndex]);
+				xhr.caller['readyEventScan']("Go for it!");
 			});
 			xhr.caller['add'](picker);
-		});
+		};
 		var params = {
 			'sessid':xhr.sessid
 		};
@@ -125,9 +130,9 @@ exports.KPClient = function() {
 	
 	xhr.checkinVolunteer = function(volunteer_id) {
 		var newCheckinURL = checkinURL.replace("{VOLUNTEER_ID}", volunteer_id);
-		xhr.setOnload(function() {
+		xhr.onload = function() {
 			return xhr.responseText;
-		});
+		};
 		var params = {
 			'sessid':xhr.sessid
 		};
@@ -140,9 +145,9 @@ exports.KPClient = function() {
 		var params = {
 			'sessid':xhr.sessid
 		}
-		xhr.setOnload(function() {
+		xhr.onload = function() {
 			return true;
-		});
+		};
 		xhr.open("GET",logoutURL);
 	}
 	

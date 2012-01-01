@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <property name="ti.android.runtime">rhino</property>
-    <sdk-version>1.8.0.1</sdk-version>
+    <sdk-version>1.7.5</sdk-version>
     <property name="ti.android.fastdev" type="bool">false</property>
     <deployment-targets>
         <target device="mobileweb">false</target>
@@ -37,17 +37,13 @@
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
-  <android xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest>
-      <supports-screens
-        android:smallScreens="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:anyDensity="true"
-        />
-    </manifest>
-  </android>
-  <modules>
-    <module version="0.2">com.mwaysolutions.barcode</module>
-  </modules>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <supports-screens android:anyDensity="true"
+                android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+        </manifest>
+    </android>
+    <modules>
+        <module version="0.2">com.mwaysolutions.barcode</module>
+    </modules>
 </ti:app>

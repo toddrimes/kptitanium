@@ -59,6 +59,28 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	        }
 	      });
 	  });
+	 
+	 /* scanBtn.addEventListener("click", function(e) {
+		  var intent = Ti.Android.createIntent({
+		    action: "com.google.zxing.client.android.SCAN"
+		  });
+		  intent.putExtra("SCAN_MODE", "QR_SCAN_MODE");
+		  var activity = Ti.Android.currentActivity;
+		  activity.startActivityForResult(intent, function(e) {
+		    if (e.resultCode == Ti.Android.RESULT_OK) {
+		      var contents = e.intent.getStringExtra("SCAN_RESULT");
+		      var format = e.intent.getStringExtra("SCAN_RESULT_FORMAT");
+		      Ti.UI.createNotification({
+		        message: "Contents: " + contents + ", Format: " + format
+		      }).show();
+		    } else if (e.resultCode == Ti.Android.RESULT_CANCELED) {
+		      Ti.UI.createNotification({
+		        message: "Scan canceled!"
+		      }).show();
+		    }
+		  });
+		});
+	*/
 	
 	win.add(scanBtn);
     
