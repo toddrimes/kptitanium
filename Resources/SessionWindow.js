@@ -5,7 +5,7 @@ exports.SessionWindow = function(navController,kpClient) {
 	var rowData = [];
 
 	var win = Ti.UI.createWindow({
-		title:'karmapoints&copy;',
+		title:'karmapoints',
 		backgroundColor:'#fff',
 		layout:'vertical',
 		exitOnClose: true,
@@ -49,7 +49,8 @@ exports.SessionWindow = function(navController,kpClient) {
 		title:'Login',
 		height:'35dp',
 		width:'100dp',
-		top:'10dp'
+		top:'10dp',
+		softKeyboardOnFocus:Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS
 	});
 	
 	var loginSuccess = function() {
