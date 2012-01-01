@@ -4,7 +4,7 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	var titaniumBarcode = require('com.mwaysolutions.barcode');
 
 	var win = Ti.UI.createWindow({
-		title:'Scan'+navController.windowStack.length,
+		title:'Scanning badges for: ',
 		backgroundColor:'#fff',
 		layout:'vertical',
 		navBarHidden: false

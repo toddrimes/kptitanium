@@ -6,7 +6,7 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.011926 seconds on emulator to get ready
+[DEBUG] waited 0.014637 seconds on emulator to get ready
 [DEBUG] com.appcelerator.navcontroller installed? True
 [INFO] Copying project resources..
 [INFO] Detected tiapp.xml change (or assets deleted), forcing full re-build...
@@ -101,7 +101,7 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.012121 seconds on emulator to get ready
+[DEBUG] waited 0.012002 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Launching application ... NavigationControllerDemo
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.appcelerator.navcontroller/.NavigationcontrollerdemoActivity }
