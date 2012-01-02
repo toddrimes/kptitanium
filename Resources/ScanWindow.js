@@ -11,6 +11,8 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 		navBarHidden: false
 	});
 	
+	win.orientationModes = [Ti.UI.PORTRAIT];
+	
 	var headerLbl = Titanium.UI.createLabel({
 	    text:event_title,
 	    height:'auto',
@@ -34,6 +36,10 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 
     win.add(webview);
     
+    win.updateView = function(contents) {
+    	webview.html = contents;
+    }
+    
 	var scanBtn = Ti.UI.createButton({
 		title:'Scan',
 		height:'50dp',
@@ -45,7 +51,11 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	   titaniumBarcode.scan({
 	        success: function (data) {
 	          if(data && data.barcode) {
-	            webview.setURL(data.barcode);
+	          	var source = data.barcode;
+	          	var lastSlash = source.lastIndexOf('/');
+	          	var volunteerid = source.substring(lastSlash + 1);
+	          	// alert("volunteerid is " + volunteerid);
+	          	kpClient.checkinVolunteer(volunteerid,win);
 	          } else {
 	            alert(JSON.stringify(data));
 	          }

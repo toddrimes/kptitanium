@@ -13,10 +13,13 @@ exports.KPClient = function() {
 
 	var xhr = Ti.Network.createHTTPClient({
 	    onerror: function(e) {
-	    Ti.API.debug("STATUS: " + this.status);
-	    Ti.API.debug("TEXT:   " + this.responseText);
-	    Ti.API.debug("ERROR:  " + e.error);
-	    alert('There was an error retrieving the remote data. Try again.');
+	    statusMsg = "STATUS: " + this.status;
+	    Ti.API.debug(statusMsg);
+	    textMsg = "TEXT:   " + this.responseText;
+	    Ti.API.debug(textMsg);
+	    errorMsg = "ERROR:  " + e.error;
+	    Ti.API.debug(errorMsg);
+	    alert(statusMsg + "; " + textMsg + "; " + errorMsg);
 	    },
 	    timeout:5000
 	});
@@ -111,14 +114,15 @@ exports.KPClient = function() {
 		params = null;
 	}
 	
-	xhr.checkinVolunteer = function(volunteer_id) {
+	xhr.checkinVolunteer = function(volunteer_id, caller) {
 		var newCheckinURL = checkinURL.replace("{VOLUNTEER_ID}", volunteer_id);
 		xhr.onload = function() {
-			return xhr.responseText;
+			caller['updateView'](xhr.responseText);
 		};
 		var params = {
 			'sessid':xhr.sessid
 		};
+		// alert("checking in to " + newCheckinURL);
 		xhr.open("GET",newCheckinURL,false);
 		xhr.send(params);
 		params = null;

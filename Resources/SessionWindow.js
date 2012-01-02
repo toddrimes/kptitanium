@@ -13,6 +13,8 @@ exports.SessionWindow = function(navController,kpClient) {
 		navBarHidden: false
 	});
 	
+	win.orientationModes = [Ti.UI.PORTRAIT];
+	
 	var headerLbl = Titanium.UI.createLabel({
 	    text:'Login is a Coordinator',
 	    height:'auto',
