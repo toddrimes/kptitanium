@@ -11,7 +11,7 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <id>org.karmapoints.kptitanium</id>
-    <name>karma points</name>
+    <name>karmapoints</name>
     <version>1.0</version>
     <publisher>Todd Rimes</publisher>
     <url>http://www.karmapoints.org</url>
@@ -32,9 +32,6 @@
         </orientations>
         <orientations device="ipad">
             <orientation>Ti.UI.PORTRAIT</orientation>
-            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">

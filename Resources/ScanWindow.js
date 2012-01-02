@@ -18,8 +18,8 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	    height:'auto',
 	    width:'auto',
 	    shadowColor:'#ccc',
-	    shadowOffset:{x:5,y:5},
-	    color:'#fff',
+	    shadowOffset:{x:10,y:10},
+	    color:'#1397A5',
 	    font:{fontSize:16},
 	    textAlign:'center',
 	    top:'10dp'

@@ -20,8 +20,8 @@ exports.SessionWindow = function(navController,kpClient) {
 	    height:'auto',
 	    width:'auto',
 	    shadowColor:'#000',
-	    shadowOffset:{x:5,y:5},
-	    color:'#fff',
+	    shadowOffset:{x:10,y:10},
+	    color:'#1397A5',
 	    font:{fontSize:16},
 	    textAlign:'center',
 	    top:'10dp'
@@ -75,24 +75,53 @@ exports.SessionWindow = function(navController,kpClient) {
 	
 	var rowTitles = [];
 	var rowIds = [];
+	var selectedRow = 0; // no change in the selection of "picker" below
 	
-	win.addPicker = function(rowData){
-		var picker = Titanium.UI.createPicker({useSpinner:true});
-		data = [];
+	win.addPicker = function(rowData){	
+	
+		var eventsLbl = Titanium.UI.createLabel({
+		    text:'Choose an event',
+		    height:'auto',
+		    width:'auto',
+		    shadowColor:'#000',
+		    shadowOffset:{x:10,y:10},
+		    color:'#1397A5',
+		    font:{fontSize:16},
+		    textAlign:'center',
+		    top:'10dp'
+		});
+
+		var picker = Titanium.UI.createPicker();
 		for (var i in rowData) {
 			title = rowData[i].node_title;
 			rowTitles[i] = title;
 			rowIds[i] = rowData[i].nid;
-			data[i]=Titanium.UI.createPickerRow({title:title})
+			var row = Titanium.UI.createPickerRow({title:title});
+			picker.add(row);
 		}
-		picker.add(data);
+
 		picker.addEventListener('change', function(e) {
-			title = rowTitles[e.rowIndex];
+			selectedRow = e.rowIndex;
+		});
+
+		var continueBtn = Titanium.UI.createButton({
+			title:'Continue',
+			height:'35dp',
+			width:'150dp',
+			top:'10dp',
+			softKeyboardOnFocus:Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS	
+		});
+		continueBtn.addEventListener('click', function(e) {
+			title = rowTitles[selectedRow];
 			// use the entered credentials to attempt login
-			kpClient.readyCoordinator(rowIds[e.rowIndex]);
+			kpClient.readyCoordinator(rowIds[selectedRow]);
 			readyEventScan(title);
 		});
+		
+		win.add(eventsLbl);
 		win.add(picker);
+		win.add(continueBtn);
+		win.remove(loginBtn);
 	}
 	
 	// handle physical back button press
