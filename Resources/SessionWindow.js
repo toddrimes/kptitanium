@@ -16,13 +16,13 @@ exports.SessionWindow = function(navController,kpClient) {
 	win.orientationModes = [Ti.UI.PORTRAIT];
 	
 	var headerLbl = Titanium.UI.createLabel({
-	    text:'Login is a Coordinator',
+	    text:'Login as a Coordinator',
 	    height:'auto',
 	    width:'auto',
 	    shadowColor:'#000',
 	    shadowOffset:{x:10,y:10},
 	    color:'#1397A5',
-	    font:{fontSize:16},
+	    font:{fontSize:24},
 	    textAlign:'center',
 	    top:'10dp'
 	});
@@ -30,7 +30,7 @@ exports.SessionWindow = function(navController,kpClient) {
 	var usernameFld = Titanium.UI.createTextField({
     	hintText : 'email or username',
 	    color:'#336699',
-	    height:'35dp',
+	    height:'65dp',
 	    top:'10dp',
 	    left:'35dp',
 	    width:'250dp',
@@ -41,7 +41,7 @@ exports.SessionWindow = function(navController,kpClient) {
     	hintText : 'password',
     	passwordMask: true,
 	    color:'#336699',
-	    height:'35dp',
+	    height:'65dp',
 	    top:'10dp',
 	    left:'35dp',
 	    width:'250dp',
@@ -69,7 +69,7 @@ exports.SessionWindow = function(navController,kpClient) {
 		kpClient.postLogin(usernameFld.value, passwordFld.value,win);
 	});
 	
-	readyEventScan = function(event_title){
+	win.readyEventScan = function(event_title){
 		navController.open(new ScanWindow(navController,kpClient,event_title));
 	}
 	
@@ -114,8 +114,7 @@ exports.SessionWindow = function(navController,kpClient) {
 		continueBtn.addEventListener('click', function(e) {
 			title = rowTitles[selectedRow];
 			// use the entered credentials to attempt login
-			kpClient.readyCoordinator(rowIds[selectedRow]);
-			readyEventScan(title);
+			kpClient.readyCoordinator(rowIds[selectedRow],title,win);
 		});
 		
 		win.add(eventsLbl);
@@ -126,25 +125,32 @@ exports.SessionWindow = function(navController,kpClient) {
 	
 	// handle physical back button press
 	// set up confirmation dialog
-	var a = Ti.UI.createAlertDialog();
+	var a = Ti.UI.createAlertDialog({
+	    message: 'Exit karmapoints app?',
+	    buttonNames: ['No','Yes'],
+	    cancel: 0
+	});
 	 
-	a.message = 'Exit karmapoints app?';
-	a.buttonNames = ['Yes','No'];
-	a.cancel = 1;
+	//a.message = 'Exit karmapoints app?';
+	//a.buttonNames = ['Yes','No'];
+	//a.cancel = 1;
 	 
 	a.addEventListener('click', function(e)
 	{
-	    if (e.index == 0) {
-			kpClient.fetchLogout();
-			win.close();
+	    if (e.index == 1) {
+			kpClient.fetchLogout(win);
+			//win.close();
 	    }
 	});
+	
+	win.logoff = function() {
+		win.close();
+	}
 	 
 	win.add(a);
 	
 	win.addEventListener('android:back',function(e) {
 	    a.show();
-	    return false;
 	});
 	
 	win.add(headerLbl);

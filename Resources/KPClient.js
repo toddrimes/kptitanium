@@ -8,7 +8,9 @@ exports.KPClient = function() {
 	var loginURL = host + "/rest/user/login";
 	var readyCoordinatorURL = host + "/coordinatorsession.php";
 	var eventsURL = host + "/rest/views/view_mobile_coordinator_events.json";
-	var checkinURL = host + "/event/checkin/{VOLUNTEER_ID}?ajax=1";
+	// var checkinURL = host + "/rest/views/view_event_volunteer_checkin";
+	var checkinURL = host + "/event/checkin";
+	// var checkinURL = host + "/event/checkin/{VOLUNTEER_ID}?ajax=1";
 	var logoutURL = host + "/logout";
 
 	var xhr = Ti.Network.createHTTPClient({
@@ -86,8 +88,9 @@ exports.KPClient = function() {
 		params = null;
 	}
 	
-	xhr.readyCoordinator = function(event_id) {
+	xhr.readyCoordinator = function(event_id,event_title,caller) {
 		xhr.onload = function() {
+			caller['readyEventScan'](event_title);
 			return true;
 		};
 		var params = {
@@ -115,25 +118,27 @@ exports.KPClient = function() {
 	}
 	
 	xhr.checkinVolunteer = function(volunteer_id, caller) {
-		var newCheckinURL = checkinURL.replace("{VOLUNTEER_ID}", volunteer_id);
 		xhr.onload = function() {
 			caller['updateView'](xhr.responseText);
 		};
 		var params = {
-			'sessid':xhr.sessid
+			'sessid':xhr.sessid,
+			'args':volunteer_id,
+			'ajax':1,
+			'display_id':'page_view_event_volunteer_checkin'
 		};
-		// alert("checking in to " + newCheckinURL);
-		xhr.open("GET",newCheckinURL,false);
+		alert("checking in to " + checkinURL + "/" + volunteer_id);
+		xhr.open("GET",checkinURL + "/" + volunteer_id,false);
 		xhr.send(params);
 		params = null;
 	}
 	
-	xhr.fetchLogout = function() {
+	xhr.fetchLogout = function(caller) {
 		var params = {
 			'sessid':xhr.sessid
 		}
 		xhr.onload = function() {
-			return true;
+			caller['logoff']();
 		};
 		xhr.open("GET",logoutURL);
 	}

@@ -12,7 +12,7 @@
     </deployment-targets>
     <id>org.karmapoints.kptitanium</id>
     <name>karmapoints</name>
-    <version>1.0</version>
+    <version>2</version>
     <publisher>Todd Rimes</publisher>
     <url>http://www.karmapoints.org</url>
     <description>This app allows karmapoints-registered coordinators to check-in volunteers at events.</description>

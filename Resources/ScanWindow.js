@@ -20,7 +20,7 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	    shadowColor:'#ccc',
 	    shadowOffset:{x:10,y:10},
 	    color:'#1397A5',
-	    font:{fontSize:16},
+	    font:{fontSize:24},
 	    textAlign:'center',
 	    top:'10dp'
 	});
@@ -55,6 +55,7 @@ exports.ScanWindow = function(navController,kpClient,event_title) {
 	          	var lastSlash = source.lastIndexOf('/');
 	          	var volunteerid = source.substring(lastSlash + 1);
 	          	// alert("volunteerid is " + volunteerid);
+	            alert(JSON.stringify(data));
 	          	kpClient.checkinVolunteer(volunteerid,win);
 	          } else {
 	            alert(JSON.stringify(data));
